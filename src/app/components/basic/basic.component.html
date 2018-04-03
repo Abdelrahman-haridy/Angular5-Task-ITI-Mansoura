@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <h4>One way</h4>
+        <h1>welcome {{ name }}</h1>
+        <input class="form-control" type="text" #inputName>
+        <button class="btn btn-primary" (click)="getName(inputName.value)">click</button>
+      </div>
+      
+      
+      <hr>
+      
+      <div>
+        <h4>Two ways</h4>
+        <h1>track name is :  {{ track }}</h1>
+        <input class="form-control" type="text" [(ngModel)]="track">
+      </div>
+      
+      <hr>
+      <img src="./../../../assets/img/pic01.jpg" />
+      <h4>ngFor & ngIf</h4>
+      <h3>{{ manger }}</h3>
+      
+      <p>{{ emps }}</p>
+      
+      <hr>
+      <h4>list of emps</h4>
+      <p>{{ empsList[0].name }}</p>
+      
+      <ul>
+        <li *ngFor="let emp of empsList; let i = index">{{ i + 20 }} Name: {{ emp.name }} , age: {{ emp.age }}</li>
+      </ul>
+      
+      <hr>
+
+          
+</div>

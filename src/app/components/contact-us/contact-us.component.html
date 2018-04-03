@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>Contact Us</h1>
+  <div class="form-group">
+      <label>itiInput</label>
+      <input required #itiInput ngModel type="text" class="form-control">
+      <p>{{itiInput.className}}</p>
+    </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <form #contactsForm="ngForm" (submit)="getForm(contactsForm.value)">
+        
+        
+
+        <div class="form-group">
+          <label>UserName</label>
+          <input required #inputUser="ngModel" ngModel type="text" class="form-control" name="userName">
+          <div *ngIf="inputUser.errors && (inputUser.dirty)" class="alert alert-danger">
+            <h5>PLZ enter your user name</h5>
+          </div>
+          
+        </div>
+        <div ngModelGroup="personalInfo">
+          <div class="form-group">
+            <label>First Name</label>
+            <input #inputFirst="ngModel" ngModel type="text" class="form-control" name="firstName">
+          </div>
+          <div class="form-group">
+            <label>last Name</label>
+            <input #inputLast="ngModel" ngModel type="text" class="form-control" name="lastName">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Email</label>
+          <input #inputEmail="ngModel" ngModel type="email" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+          <label>subject</label>
+          <input #inputsubject="ngModel" ngModel type="text" class="form-control" name="subject">
+        </div>
+        <div class="form-group">
+          <label>massege</label>
+          <textarea #inputMassege="ngModel" ngModel rows="8" class="form-control" name="massege"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">send</button>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <p>{{ formObj.userName }}</p>
+      <p>{{ formObj.personalInfo.firstName }}</p>
+      <p>{{ formObj.personalInfo.lastName }}</p>
+      <p>{{ formObj.email }}</p>
+      <p>{{ formObj.subject }}</p>
+      <p>{{ formObj.massege }}</p>
+      
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+</div>

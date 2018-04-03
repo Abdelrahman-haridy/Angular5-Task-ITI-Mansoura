@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>list of Photos</h1>
+  <div class="row" *ngFor="let photo of photos">
+    <div class="col-sm-3">
+      <img src="{{ photo.thumbnailUrl }}">
+      <img *ngIf="!photo.thumbnailUrl" src="./../../../assets/img/pic01.jpg">
+    </div>
+    <div class="col-sm-9">
+      <p>{{ photo.title }}</p>
+    </div>
+  </div>
+</div>
